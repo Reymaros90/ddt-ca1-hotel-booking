@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Remix generated files
+.deps/
+.states/
+artifacts/
+
+# Node.js dependencies
+node_modules/
