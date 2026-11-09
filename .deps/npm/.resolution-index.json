@@ -1,8 +1,23 @@
 {
+  "contracts/address public hotel.sol": {
+    "__sources__": {}
+  },
+  "contracts/address public guest.sol": {
+    "__sources__": {}
+  },
+  "contracts/enum BookingStatus.sol": {
+    "__sources__": {}
+  },
+  "contracts/BookingStatus public status.sol": {
+    "__sources__": {}
+  },
+  "contracts/constructor().sol": {
+    "__sources__": {}
+  },
   "contracts/HotelBooking.sol": {
     "__sources__": {
       "contracts/HotelBooking.sol": {
-        "content": "\r\n // SPDX-License-Identifier: UNLICENSED\r\n pragma solidity ^0.8.20;\r\n\r\n contract HotelBooking {\r\n     // Initial contract structure\r\n }\r\n",
+        "content": "\r\n // SPDX-License-Identifier: UNLICENSED\r\n pragma solidity ^0.8.20;\r\n\r\n contract HotelBooking {\r\n    address public immutable hotel;\r\n    address public guest;\r\n\r\n    enum BookingStatus { Available, Pending, Confirmed }\r\n    BookingStatus public status;\r\n\r\n    event BookingRequested(address indexed guest);\r\n    event BookingConfirmed(address indexed hotel, address indexed guest);\r\n\r\n    constructor() {\r\n        hotel = msg.sender;\r\n        status = BookingStatus.Available;\r\n    }\r\n\r\n    /** @notice A non-hotel wallet reserves the only available room. */\r\n    function bookRoom() external {\r\n        require(msg.sender != hotel, \"Hotel cannot book\");\r\n        require(status == BookingStatus.Available, \"Room unavailable\");\r\n\r\n        guest = msg.sender;\r\n        status = BookingStatus.Pending;\r\n        emit BookingRequested(msg.sender);\r\n    }\r\n\r\n    /** @notice Only the hotel wallet may confirm a pending booking. */\r\n    function confirmBooking() external {\r\n        require(msg.sender == hotel, \"Only hotel can confirm\");\r\n        require(status == BookingStatus.Pending, \"No pending booking\");\r\n\r\n        status = BookingStatus.Confirmed;\r\n        emit BookingConfirmed(hotel, guest);\r\n    }\r\n\r\n    /** @notice Anyone can read the public booking record. */\r\n    function getBooking() external view returns (address guestAddress, BookingStatus bookingStatus) {\r\n        return (guest, status);\r\n    }\r\n}\r\n",
         "file": "contracts/HotelBooking.sol"
       }
     }

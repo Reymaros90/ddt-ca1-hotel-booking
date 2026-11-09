@@ -4,7 +4,116 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "hotel",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "guest",
+						"type": "address"
+					}
+				],
+				"name": "BookingConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "guest",
+						"type": "address"
+					}
+				],
+				"name": "BookingRequested",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "bookRoom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmBooking",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBooking",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "guestAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "enum HotelBooking.BookingStatus",
+						"name": "bookingStatus",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "guest",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "hotel",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "status",
+				"outputs": [
+					{
+						"internalType": "enum HotelBooking.BookingStatus",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -12,7 +121,17 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"bookRoom()": {
+					"notice": "A non-hotel wallet reserves the only available room. "
+				},
+				"confirmBooking()": {
+					"notice": "Only the hotel wallet may confirm a pending booking. "
+				},
+				"getBooking()": {
+					"notice": "Anyone can read the public booking record. "
+				}
+			},
 			"version": 1
 		}
 	},
@@ -33,11 +152,11 @@
 	},
 	"sources": {
 		"contracts/HotelBooking.sol": {
-			"keccak256": "0x8f920ecff63844da22feb3cc2f31d833f33a8a324d53515c17225eb3f0896f1d",
+			"keccak256": "0x019a88f8de58d1a152864cd83f90ea3540f57997754093c30d8ab8e4a30b6d56",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://fb058e7590f928eae7f229fc030f7140cf3a2f6d7bb023303375ec7551899547",
-				"dweb:/ipfs/QmaAet3ob3Dhy4CP8tJy5BNxani1HxNuAR71G4DtHuKyqZ"
+				"bzz-raw://b8e66bc7279ed251d5312e84deea77bf7a8b6084a63896a5b66d0df2cf4f202f",
+				"dweb:/ipfs/QmNNKTPRwHYQ7U3oB6iaNc27xcpuYd2FtDYb2RkpaAfRhP"
 			]
 		}
 	},
