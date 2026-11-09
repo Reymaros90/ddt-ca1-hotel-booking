@@ -1,0 +1,10 @@
+{
+  "contracts/HotelBooking.sol": {
+    "__sources__": {
+      "contracts/HotelBooking.sol": {
+        "content": "\r\n // SPDX-License-Identifier: UNLICENSED\r\n pragma solidity ^0.8.20;\r\n\r\n contract HotelBooking {\r\n     // Initial contract structure\r\n }\r\n",
+        "file": "contracts/HotelBooking.sol"
+      }
+    }
+  }
+}

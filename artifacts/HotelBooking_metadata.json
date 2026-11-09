@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/HotelBooking.sol": "HotelBooking"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/HotelBooking.sol": {
+			"keccak256": "0x8f920ecff63844da22feb3cc2f31d833f33a8a324d53515c17225eb3f0896f1d",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://fb058e7590f928eae7f229fc030f7140cf3a2f6d7bb023303375ec7551899547",
+				"dweb:/ipfs/QmaAet3ob3Dhy4CP8tJy5BNxani1HxNuAR71G4DtHuKyqZ"
+			]
+		}
+	},
+	"version": 1
+}
